@@ -6,14 +6,14 @@ class FileReader {
   filePath;
   readingStream;
   fileEncoding = 'utf-8';
-  HighWaterMark = 1024;
+  highWaterMark = 1024;
   totalSymbols = 0;
   symbolsCount = new Map();
 
   constructor(filePath, fileEncoding, highWaterMark) {
     this.filePath = path.join(__dirname, filePath);
     this.fileEncoding = fileEncoding ? fileEncoding : this.fileEncoding;
-    this.highWaterMark = highWaterMark ? HighWaterMark : this.HighWaterMark;
+    this.highWaterMark = highWaterMark ? highWaterMark : this.highWaterMark;
   }
 
   closeOnError() {
