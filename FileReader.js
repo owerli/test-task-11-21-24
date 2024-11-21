@@ -45,6 +45,8 @@ class FileReader {
 
     this.stream.on('data', chunk => {
 
+      console.log(`Handled ${this.stream.bytesRead} bytes...`);
+
       for (const symbol of chunk) {
         if (/[\b\f\n\r\t\v\a]/gm.test(symbol)) continue;
         else if (this.symbolsCount[symbol]) this.symbolsCount[symbol]++;
